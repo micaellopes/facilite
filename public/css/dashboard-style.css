@@ -1,0 +1,655 @@
+.border-test{
+  border: 1px solid black;
+}
+
+/****************** NAVBAR ********************/
+/* NavBar */
+#navbar{
+  padding: 10px;
+  background-color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Logo */
+#logo{
+  font-size: 20px;
+  font-weight: 700;
+  color: #077E9F;
+}
+
+/* Dropdown hover - menu navbar */
+.dropdown-categorias:hover .dropdown-servicos{
+  display: block;
+  margin-top: 0;
+}
+
+/* Menu Hamburguer */
+#menu-hamburguer{
+  border-radius: 0px; 
+  border: none;
+}
+
+/* NavBar Menu */
+#navbar-menu li{
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/* NavBar Menu - Entrar */
+#navbar-entrar{
+  color: #024D62;
+  border: 1px solid #024D62;
+  padding: 10px;
+  /* margin-right: 10px; */
+  /* border-radius: 0px; */
+}
+#navbar-entrar:hover{
+  color: #FFFFFF;
+  background-color: #024D62;
+}
+
+/* Navbar Menu - Cadastrar */
+#navbar-cadastrar{
+  color: #FFFFFF;
+  background-color: #488E00;
+  border: 1px solid #488E00;
+  padding: 10px;
+}
+
+/* Navbar Categorias */
+#navbar-categorias, #navbar-categorias-md{
+  padding-left: 2%;
+}
+
+#navbar-categorias a:hover, #navbar-categorias-md a:hover{
+  color: #488E00;
+  /* font-size: 16px; */
+  font-weight: bold;
+  background: none;
+}
+
+/* .message-icon{
+  color: #ADADAD;
+} */
+
+.inbox-link{
+  color: #ADADAD;
+}
+
+.inbox-link-notify{
+  color: #04627C;
+}
+
+#menu-user{
+  color: #606060;
+  background-color: transparent !important;
+}
+
+#dropdown-menu-user a{
+  color: #606060;
+}
+
+#dropdown-menu-user a:hover span{
+  color: #024D62;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+#dropdown-menu-user a:hover{
+  color: #024D62;
+  /* font-weight: bold; */
+  background-color: transparent;
+}
+/***************** /NAVBAR ********************/
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 85px;
+  font-family: 'Open Sans', sans-serif; 
+  background-color: #F9F9F9;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 58px 20px 20px 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #FFFFFF;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  color: #024D62;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #024D62;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/***************** FORMULÁRIOS ******************/
+
+/* Inputs Styles */
+input#email,input#email_edit,input#password,input#password_confirmation,input#current_password,input#name,input#name_edit,
+input#cpf,input#cpf_edit,input#tel,input#tel_edit,input#url_perfil{
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-bottom: 1px solid #999999;
+  padding: 0px;
+}
+
+/* Inputs Focus */
+input#email:focus,input#email_edit:focus,input#password:focus,input#password_confirmation:focus,
+input#current_password:focus,input#name:focus,input#name_edit:focus,input#cpf:focus,input#cpf_edit:focus,
+input#tel:focus,input#tel_edit:focus,input#url_perfil:focus{
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid #024D62;
+}
+
+/***************** /FORMULÁRIOS *****************/
+
+/******************** CORES ******************  */
+/* Grey */
+.gray-primary{
+  color: #9F9F9F;
+}
+
+/* Green */
+.green-primary{
+  color: #76E603;
+}
+
+.green-secondary{
+  color: #5BB400;
+}
+
+.green-third{
+  color:  #488E00;
+}
+
+.green-4{
+  color: #A6ED5E;
+}
+
+.green-5{
+  color: #8FE835;
+}
+
+/* Blue */
+.blue-primary{
+  color: #3B16B0;
+}
+
+.blue-secondary{
+  color: #2C0F8A;
+}
+
+.blue-third{
+  color: #21096C;
+}
+
+.blue-4{
+  color: #755CC5;
+}
+
+.blue-5{
+  color: #573AB6;
+}
+
+/* Cyan */
+.cyan-primary{
+  color: #077E9F;
+}
+
+.cyan-secondary{
+  color: #04627C;
+}
+
+.cyan-third{
+  color: #024D62;
+}
+
+.cyan-4{
+  color: #4DA1B9;
+}
+
+.cyan-5{
+  color: #2B8BA6;
+}
+
+/* Cor Default */
+.cor-default{
+  color: #5C5B5B;
+}
+/******************** /CORES *****************  */
+
+/******************* BOTÕES *******************/
+
+/**
+ * Botão Green Small
+ */
+.btn-green-small {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #5BB400;
+  height: 36px;
+  width: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-green-small:hover {
+  color: #ffffff;
+  background: #488E00;
+  text-decoration: none;
+}
+
+/**
+ * Botão Green Medium
+ */
+.btn-green-medium {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #5BB400;
+  height: 40px;
+  width: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-green-medium:hover {
+  background: #488E00;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/**
+ * Botão Green Large
+ */
+.btn-green-large {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #5BB400;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-green-large:hover {
+  color: #ffffff;
+  background: #488E00;
+  text-decoration: none;
+}
+
+/**
+ * Botão Blue Small
+ */
+.btn-blue-small {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #2C0F8A;
+  height: 36px;
+  width: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-blue-small:hover {
+  color: #ffffff;
+  background: #21096C;
+  text-decoration: none;
+}
+
+/**
+ * Botão Blue Medium
+ */
+.btn-blue-medium {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #2C0F8A;
+  height: 40px;
+  width: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-blue-medium:hover {
+  background: #21096C;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/**
+ * Botão Blue Large
+ */
+.btn-blue-large {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #2C0F8A;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-blue-large:hover {
+  color: #ffffff;
+  background: #21096C;
+  text-decoration: none;
+}
+
+/**
+ * Botão Cyan Small
+ */
+.btn-cyan-small {
+  color: #ffffff;
+  background: #04627C;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 2px;
+}
+.btn-cyan-small:hover {
+  color: #ffffff;
+  background: #024D62;
+  text-decoration: none;
+}
+.btn-cyan-small:focus {
+  color: #ffffff;
+  background: #024D62;
+  text-decoration: none;
+}
+
+/**
+ * Botão RED Small
+ */
+.btn-red-small {
+  color: #FFFFFF;
+  background: #C32222;
+  height: auto;
+  width: auto%;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+}
+.btn-red-small:hover {
+  color: #FFFFFF;
+  background: #B90000;
+  text-decoration: none;
+}
+.btn-red-small:focus {
+  color: #FFFFFF;
+  background: #B90000;
+  text-decoration: none;
+}
+
+
+/**
+ * Botão Cyan Medium
+ */
+.btn-cyan-medium {
+  color: #ffffff;
+  /* font-size: 14px; */
+  background: #04627C;
+  height: 40px;
+  width: auto;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 0px;
+}
+.btn-cyan-medium:hover {
+  background: #024D62;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/**
+ * Botão Cyan Large
+ */
+.btn-cyan-large {
+  color: #024D62;
+  /* font-size: 14px; */
+  background: #FFFFFF;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #024D62;
+  border-radius: 0px;
+}
+.btn-cyan-large:hover {
+  color: #ffffff;
+  background: #024D62;
+  text-decoration: none;
+}
+.btn-cyan-large:focus {
+  color: #ffffff;
+  background: #024D62;
+  text-decoration: none;
+}
+
+/**
+ * Botão Cyan Large 2
+ */
+.btn-cyan-large-2 {
+  color: #FFFFFF;
+  /* font-size: 14px; */
+  background: #024D62;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #024D62;
+  border-radius: 0px;
+}
+.btn-cyan-large-2:hover {
+  color: #FFFFFF;
+  background: #023D4E;
+  text-decoration: none;
+}
+.btn-cyan-large-2:focus {
+  color: #FFFFFF;
+  background: #023D4E;
+  text-decoration: none;
+}
+
+/**
+ * Botão Cyan RED Large
+ */
+.btn-red-large {
+  color: #C70000;
+  /* font-size: 14px; */
+  background: #FFFFFF;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #C70000;
+  border-radius: 0px;
+}
+.btn-red-large:hover {
+  color: #ffffff;
+  background: #B90000;
+  text-decoration: none;
+}
+.btn-red-large:focus {
+  color: #ffffff;
+  background: #B90000;
+  text-decoration: none;
+}
+
+/**
+ * Botão RED Large 2
+ */
+.btn-red-large-2 {
+  color: #FFFFFF;
+  /* font-size: 14px; */
+  background: #C70000;
+  height: 45px;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #C70000;
+  border-radius: 0px;
+}
+.btn-red-large-2:hover {
+  color: #FFFFFF;
+  background: #B90000;
+  text-decoration: none;
+}
+.btn-red-large-2:focus {
+  color: #FFFFFF;
+  background: #B90000;
+  text-decoration: none;
+}
+
+/****************** /BOTÕES *******************/
+
+/* Style Image Logos Categorias/Serviços */
+
+.shadow-style{
+  box-shadow: 2px 3px 4px #5BB400;
+}
+
+
+/* HR-1 */
+
+.hr-1{
+  border-color: #E1E1E1;
+}
+
+/* Padding */
+
+.padding-top-12{
+  padding-top: 12%;
+}
+
+.padding-top-10{
+  padding-top: 10%;
+}
+
+.padding-top-8{
+    padding-top: 8%;
+}
+
+.padding-top-6{
+    padding-top: 6%;
+}
+
+.padding-top-4{
+    padding-top: 4%;
+}
+
+.padding-top-2{
+    padding-top: 2%;
+}
+
+.padding-top-1{
+    padding-top: 1%;
+}
+
+.padding-bottom-1{
+    padding-bottom: 1%;
+}
+
+.padding-bottom-2{
+    padding-bottom: 2%;
+}
+.padding-bottom-4{
+    padding-bottom: 4%;
+}
+
+/* Font-Sizes */
+
+.font-10{
+  font-size: 10px;
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.font-13{
+  font-size: 13px;
+}
+
+.font-16{
+  font-size: 16px;
+}
+
+.font-18{
+  font-size: 18px;
+}
+
+.font-20{
+  font-size: 20px;
+}
+
+.font-25{
+  font-size: 25px;
+}
