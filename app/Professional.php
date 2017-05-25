@@ -55,4 +55,9 @@ class Professional extends Authenticatable
         return $this->hasMany('App\Models\ServicoSolicitado');
     }
 
+    // Um profissional tem vários comentários
+    public function comentarios(){
+        return $this->hasMany('App\Models\Comentario');
+    }
+
 }

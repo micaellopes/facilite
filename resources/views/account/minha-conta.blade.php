@@ -9,13 +9,13 @@
 @section('content')
       
   {{-- SIDEBAR-NAV --}}
-  <div {{-- style="box-shadow: 1px 0px 4px #888888" --}} style="border: 1px solid #ECECEC;" class="col-sm-4 col-md-3 col-lg-2 sidebar">
+  <div style="border: 1px solid #ECECEC;" class="col-sm-4 col-md-3 col-lg-2 sidebar">
 
     {{-- IMAGE USER --}}
     <div class="text-center">
       <div class="input-group center-block top-5">
         <label for="input-img" data-toggle="tooltip" data-placement="bottom" title="Alterar foto">
-          <img style="cursor: pointer;" src="/uploads/avatars/{{ Auth::user()->avatar }}" alt="" class="img-circle">
+          <img style="cursor: pointer;" src="/uploads/avatars/{{ Auth::user()->avatar }}" alt="user_image" class="img-circle">
           <form enctype="multipart/form-data" id="form-change-avatar" action="/minha-conta/editar/avatar" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
             <input id="input-img" type="file" name="avatar"  accept="image/*" style="display: none;" onchange="document.getElementById('form-change-avatar').submit();" />
@@ -124,5 +124,4 @@
   <script src="{{ asset('js/validations/minha-conta-validation-blockUI.js') }}"></script>
   {{-- Dados atualizados/Erro ao atualizar, mensagens de sessão --}}
   <script src="{{ asset('js/notifications/mensagens-sessao.js') }}"></script>
-  
 @endpush

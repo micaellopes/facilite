@@ -15,87 +15,69 @@
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 
-      <!-- NOTAS DE AVALIAÇÃO (FEEDBACK) -->
-      <div class="panel panel-default">
+      <!-- AVALIAÇÃO -->
+      <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
         <div class="panel-body">
-          
-            <h3><b>Avaliação:</b></h3>
+            <!-- <h3 style="margin-top: 0px; padding-top: 0px;" class="text-center"><span class="glyphicon glyphicon-star-empty cyan-third" aria-hidden="true" style="font-size: 35px;"></span></h3> -->
+            <h3 style="margin-top: 0px;" class="text-center cyan-third font-roboto">AVALIAÇÃO</h3>
+            <hr>
             <div class="text-center">
-            <h4 class="font-60">0.0</h4>
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+            <h4 class="font-70 cyan-primary">0.0</h4>
+            <!-- <div class="cyan-primary">
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
+            </div> -->
             <hr>
           </div>
-          
-          <div class="text-right" style="margin-right: 17%;">
-            <span class="font-16">Serviço: 
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-            </span>
-          
 
-            <span class="font-16">Pontualidade: 
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-            </span>
-
-            <span class="font-16">Preço: 
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-            </span> 
-
-            <span class="font-16">Quesito 4: 
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-            </span> 
-
-            <span class="font-16">Quesito 5: 
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-            </span> 
-          </div>
-          <hr>
           <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Avaliar</button>
+            <button type="submit" class="btn btn-green-small">AVALIAR PROFISSIONAL</button>
           </div>
-        </div>
-        <!-- //PAINEL -->
+
+        </div>  
       </div>
-      <!-- //NOTAS DE AVALIAÇÃO (FEEDBACK) -->
+      <!-- AVALIAÇÃO -->
       
 
       <!-- COMENTÁRIOS -->
-      <div class="panel panel-default">
+      <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
         <div class="panel-body">
-          <h3 class="margin-0"><b>Comentários:</b></h3>
+          <h3 style="margin-top: 0px;" class="text-center cyan-third font-roboto">COMENTÁRIOS</h3>
           <hr>
           <div class="text-center">
-            {{-- <p>Aqui comentários de clientes...</p> --}}
+
+            <!-- CARROUSEL -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+
+                @forelse($profile->comentarios as $comentario)
+                  <div @if( $comentario->id == 1 ) class="item active" @else class="item" @endif>
+                    <img class="img-circle center-block" src="/uploads/avatars/{{$comentario->user->avatar}}" alt="user_avatar{{$comentario->user->id}}" data-toggle="tooltip" data-placement="right" title="{{$comentario->user->name}}" />
+                    <p class="cyan-primary font-16 padding-top-6">{{$comentario->comentario}}</p>
+                  </div>
+                @empty
+                  <p class="cyan-secondary font-16">Este profissional ainda não possui comentários...</p>
+                @endforelse
+
+              </div>
+
+            </div>
+
             <hr>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Escrever</button>
+
+            <button type="button" class="btn btn-green-small" data-toggle="modal" data-target="#modalEscreverComentario">
+              ESCREVER COMENTÁRIO
+            </button>
+
           </div>
         </div>
-      </div>     
+      </div>
+      @include('layouts.includes.modal-escrever-comentario')
       <!-- //COMENTÁRIOS -->
       
 
@@ -110,10 +92,10 @@
 
       <div class="row">
         <div class="col-lg-12 col-md-12">
-          <div class="panel panel-default">
+          <div style="border: 2px solid #ECECEC;" class="panel panel-default">
 
             <!-- CLEARFIX PARA ENCAIXAR AS COLUNAS NO PAINEL HEAD -->
-            <div class="panel-heading clearfix">
+            <div class="panel-body clearfix">
 
               {{-- ******************* FOTO PROFISSIONAL ******************** --}}
               <div class="col-lg-3 col-md-3 col-sm-5 col-xs-5 text-center">
@@ -174,14 +156,14 @@
                   {{-- Botão Editar Perfil --}}
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <hr>
-                    <a class="btn btn-primary" href="{{route('editar-perfil')}}" role="button"><span class="glyphicon glyphicon-pencil"></span> Editar Perfil</a>
+                    <a class="btn btn-cyan-small" href="{{route('editar-perfil')}}" role="button"><span class="glyphicon glyphicon-pencil"></span> Editar Perfil</a>
                   </div>
                 {{-- Se não, exibe o botão solicitar serviço --}}
                 @else
                   {{-- Botão Soliciar Serviço --}}
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <hr>
-                    <a class="btn btn-success" href="#solicitar-servico" role="button" data-toggle="modal" data-target="#modalSolicitarServico"> Solicitar Serviço</a>
+                    <a class="btn btn-green-small" href="#solicitar-servico" role="button" data-toggle="modal" data-target="#modalSolicitarServico"> Solicitar Serviço</a>
                   </div>
                   @include('layouts.includes.modal-solicitar-servico')
 
@@ -205,57 +187,46 @@
       <div class="row">
         <div class="col-lg-8 col-md-8">
           {{-- ESPECIALIDADES --}}
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3><b>Especialidades:</b></h3>
+          <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
+            <div class="panel-body">
+              <h3 style="margin-top: 0px;" class="text-left cyan-third font-roboto">ESPECIALIDADES:</h3>
               <hr>
               <div class="">
                 {{-- Lista os serviços cadastradas pelo profissional --}}
                 @forelse($profile->servicos as $servico)
-                  <h4>{{$servico->name}}:</h4>
+                  <h4 class="cyan-secondary font-20">{{$servico->name}}:</h4>
                   {{-- Lista as especialidades cadastradas pelo profissional --}}
                   @forelse($profile->especialidades->where('servico_id', $servico->id) as $especialidade)
-                    <span>•{{$especialidade->name}}&nbsp;</span>
+                    <span class="green-third font-16">•{{$especialidade->name}}&nbsp;</span>
                   @empty
                   @endforelse
 
                 @empty
                 @endforelse
               </div>
+      
+              <!-- <h3 style="margin-top: 40px;" class="text-left cyan-third font-roboto">BIO:</h3>
               <hr>
-              {{-- <div class="panel-heading">
-                <h3><b>Bio:</b></h3>
-                <hr>
-                <div class="">
-                  <p>{{$profile->description}}</p>
-                </div>
-              </div>
-              <hr> --}}
+              <p class="cyan-secondary font-16">{{$profile->description}}</p> -->
             </div>
           </div>
 
           {{-- BIOGRAFIA --}}
-          <div class="panel panel-default">
+          <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
             <div class="panel-body">
-              <h3><b>Bio:</b></h3>
+              <h3 style="margin-top: 0px;" class="text-left cyan-third font-roboto">BIO:</h3>
               <hr>
-              <div class="">
-                <p>{{$profile->description or "Este profissional ainda não escreveu uma bio..."}}</p>
-              </div>
-              <hr>
+              <p class="cyan-primary font-16">{{$profile->description or "Este profissional ainda não escreveu uma bio..."}}</p>
             </div>
           </div>
           {{-- //BIOGRAFIA --}}
 
           {{-- IMAGENS --}}
-          <div class="panel panel-default">
+          <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
             <div class="panel-body">
-              <h3><b>Galeria de Imagens:</b></h3>
+              <h3 style="margin-top: 0px;" class="text-left cyan-third font-roboto">GALERIA:</h3>
               <hr>
-              <div class="">
-                <p>Imagens aqui...</p>
-              </div>
-              <hr>
+              <p class="cyan-primary font-16">Este profissional ainda não possui fotos na galeria...</p>
             </div>
           </div>
           {{-- //IMAGENS --}}
@@ -264,32 +235,20 @@
 
         <div class="col-lg-4 col-md-4">
           <!-- LOCAIS -->
-          <div class="panel panel-default">
+          <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
             <div class="panel-body">
-              <h3><b> Locais:</b></h3>
+              <h3 style="margin-top: 0px;" class="text-center cyan-third font-roboto">LOCAIS</h3>
               <hr>
-              <div class="text-center">
-                <span>Locais de atendimento do profissional...</span>
-              </div>
-              <hr>
-              <div class="text-center">
-                <a class="btn btn-primary" href="#!" role="button"><span class="glyphicon glyphicon-globe"></span> Locais</a>
-              </div>
+              <p class="cyan-primary font-16">Locais de atendimento do profissional...</p>
             </div>
           </div>     
           <!-- //LOCAIS-->
 
-          <div class="panel panel-default">
+          <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
             <div class="panel-body">
-              <h3 class="margin-0"><b>Calendário:</b></h3>
+              <h3 style="margin-top: 0px;" class="text-center cyan-third font-roboto">CALENDÁRIO</h3>
               <hr>
-              <div class="text-center">
-                <span>Calendário de agendamento do profissional...</span>
-              </div>
-              <hr>
-              <div class="text-center">
-                <a class="btn btn-primary" href="#!" role="button"><span class="glyphicon glyphicon-calendar"></span> Agendamento</a>
-              </div>
+              <p class="cyan-primary font-16">Calendário do profissional...</p>
             </div>
           </div>
 
@@ -319,4 +278,8 @@
   <script src="{{ asset('js/validations/solicitar-validation-blockUI.js') }}"></script>
   {{-- Dados atualizados/Erro ao atualizar, mensagens de sessão --}}
   <script src="{{ asset('js/notifications/mensagens-sessao.js') }}"></script>
+  {{-- Escrever comentário validação e blockUI loading --}}
+  <script src="{{ asset('js/validations/escrever-comentario-validation-blockUI.js') }}"></script>
+  {{-- Iniiar modais com erros de formulário--}}
+  <script src="{{ asset('js/iniciar-modais.js') }}"></script>
 @endpush

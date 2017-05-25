@@ -8,4 +8,11 @@ $(document).ready( function(){
     $('#modalAlterarSenha').modal('show');
   }
 
+  /**
+   * Se existir elementos (sessão) erro-comentar inicializa o modal para exibir mensagem
+   */
+  if ($("#erro-comentar").length){
+    $('#modalEscreverComentario').modal('show');
+  }
+
 });

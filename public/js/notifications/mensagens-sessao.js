@@ -326,5 +326,59 @@ $(document).ready( function(){
     });
   }
 
+  /**
+   * Se existir elemento (sessão) erro-atualizar inicializa o blockUI para exibir mensagem de erro
+   */
+  if ($("#erro-comentar").length){
+    $.blockUI({ 
+      message: '<span style="font-size: 20px;">Erro ao atualizar.</span><span class="glyphicon glyphicon-remove-sign pull-left" style="font-size: 22px;"></span>',
+      showOverlay: false,
+      fadeIn: 700,
+      fadeOut: 800,
+      timeout: 3000,
+      showOverlay: false,
+      centerY: false,
+      css: {
+        zIndex: 20000,
+        width: '320px',
+        top: '80px',
+        right: '20px',
+        bottom: 'auto',
+        left: 'auto',
+        border: 'none',
+        padding: '10px',
+        backgroundColor: '#C70000',
+        '-webkit-border-radius': '5px', 
+        '-moz-border-radius': '5px',
+        color: '#FFFFFF' }
+    });
+  }
+
+  /**
+   * Se existir elemento (sessão) comentario-efetuado inicializa o blockUI para exibir mensagem de sucesso
+   */
+  if ($("#comentario-efetuado").length){
+    $.blockUI({ 
+      message: '<span style="font-size: 20px;">Comentário enviado!</span><span class="glyphicon glyphicon-ok-sign pull-left" style="font-size: 22px;"></span>',
+      showOverlay: false,
+      fadeIn: 700,
+      fadeOut: 800,
+      timeout: 3000,
+      showOverlay: false,
+      centerY: false,
+      css: {
+        width: '320px',
+        top: 'auto',
+        right: '20px',
+        bottom: '20px',
+        left: 'auto',
+        border: 'none',
+        padding: '10px',
+        backgroundColor: '#5BB400',
+        '-webkit-border-radius': '5px', 
+        '-moz-border-radius': '5px',
+        color: '#FFFFFF' }
+    });
+  }
 
 });

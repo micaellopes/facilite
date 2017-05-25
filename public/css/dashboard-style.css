@@ -297,18 +297,27 @@ input#tel:focus,input#tel_edit:focus,input#url_perfil:focus{
  */
 .btn-green-small {
   color: #ffffff;
-  /* font-size: 14px; */
   background: #5BB400;
   height: 36px;
   width: auto;
   text-decoration: none;
   border: 0px;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 .btn-green-small:hover {
   color: #ffffff;
   background: #488E00;
   text-decoration: none;
+  border: 0px;
+  border-radius: 3px;
+}
+
+.btn-green-small:focus {
+  color: #ffffff;
+  background: #488E00;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 3px;
 }
 
 /**
@@ -652,4 +661,8 @@ input#tel:focus,input#tel_edit:focus,input#url_perfil:focus{
 
 .font-25{
   font-size: 25px;
+}
+
+.font-70{
+  font-size: 70px;
 }

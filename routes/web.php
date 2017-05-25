@@ -56,6 +56,12 @@ Route::group(['namespace' => 'App'], function(){
 		'uses' 	=> 'MailController@servicoSolicitado',
 		'as'	=> 'email-solicitacao' // <- Rota nomeada
 	]);
+
+	// Fazer comentário no perfil do profissional
+	Route::post('/comentar', [
+		'uses' 	=> 'ComentariosController@comentar',
+		'as'	=> 'comentar' // <- Rota nomeada
+	]);
 });
 
 /***************************//****************************/

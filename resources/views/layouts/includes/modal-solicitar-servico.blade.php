@@ -1,7 +1,7 @@
 <!-- MODAL CONTRATAR -->
 <div class="modal fade" id="modalSolicitarServico" tabindex="-1" role="dialog" aria-labelledby="modalSolicitarServico">
   <div class="modal-dialog" role="document">
-    <div style="border-radius: 0px !important;" class="modal-content">
+    <div style="border-radius: 5px !important; box-shadow: none;" class="modal-content">
       <div class="modal-header">
         <button style="font-size: 30px;" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="modalSolicitarServicoLabel">
@@ -67,7 +67,7 @@
             <div class="col-md-12 col-md-12 padding-bottom-2">
               <div class="form-group">
                 <label for="mensagem" class="control-label cor-default">Fale sobre o serviço que deseja:</label>
-                <textarea class="form-control" name="mensagem" id="mensagem" rows="10"></textarea>
+                <textarea style="resize: none;" class="form-control" name="mensagem" id="mensagem" rows="10"></textarea>
               </div>
             </div>
           </div>

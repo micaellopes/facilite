@@ -55,8 +55,8 @@ class RegisterController extends Controller
                 if ($insertProf) {
                     // Loga o usuário após cadastrar (Persiste sessão
                     $login = Auth::login($insertUser, true);
-                    // return redirect()->route('home')->with('cadastro-efetuado', 'Cadastro efetuado com sucesso!');
-                    return redirect()->route('email-welcome');
+                    return redirect()->route('home')->with('cadastro-efetuado', 'Cadastro efetuado com sucesso!');
+                    // return redirect()->route('email-welcome');
                 } else {
                     return redirect()->back();
                 }
@@ -69,8 +69,8 @@ class RegisterController extends Controller
                 $login = Auth::login($insert, true);
                 // Verifica se inseriu
                 if ($insert) {
-                    // return redirect()->route('home')->with('cadastro-efetuado', 'Cadastro efetuado com sucesso!');
-                    return redirect()->route('email-welcome');
+                    return redirect()->route('home')->with('cadastro-efetuado', 'Cadastro efetuado com sucesso!');
+                    // return redirect()->route('email-welcome');
                 } else {
                     return redirect()->back();
                 }
