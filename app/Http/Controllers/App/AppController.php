@@ -153,6 +153,9 @@ class AppController extends Controller
         $profile = Professional::where('url_perfil', $urlPerfil)->where('status', 'active')->get()->first();
         // Se for encontrada o perfil...
         if ($profile) {
+            // Emille >>
+            $profile->visualizacoes = $profile->visualizacoes + 1;
+            $profile->save();
             return view('app.perfil-profissional', compact('profile'));
         } else {
             return redirect()->route('home');

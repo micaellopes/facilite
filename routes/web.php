@@ -6,6 +6,12 @@ Auth::routes();
 /********************** AppController ********************/
 Route::group(['namespace' => 'App'], function(){
 
+    //Avaliar Profissional
+    Route::post('/avaliar/{profissional}',[
+       'uses' => 'AvaliacaoController@store',
+        'as' => 'avaliar'
+    ]);
+
 	// Home
 	Route::get('/', [
 		'uses' 	=> 'AppController@index',

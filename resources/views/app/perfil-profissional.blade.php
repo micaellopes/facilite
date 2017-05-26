@@ -18,23 +18,36 @@
       <!-- AVALIAÇÃO -->
       <div style="border: 2px solid #ECECEC; padding: 25px 15px 25px 15px;" class="panel panel-default">
         <div class="panel-body">
-            <!-- <h3 style="margin-top: 0px; padding-top: 0px;" class="text-center"><span class="glyphicon glyphicon-star-empty cyan-third" aria-hidden="true" style="font-size: 35px;"></span></h3> -->
             <h3 style="margin-top: 0px;" class="text-center cyan-third font-roboto">AVALIAÇÃO</h3>
             <hr>
             <div class="text-center">
-            <h4 class="font-70 cyan-primary">0.0</h4>
-            <!-- <div class="cyan-primary">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-            </div> -->
-            <hr>
-          </div>
+            <h4 class="font-70 cyan-primary" id="average">
+              @if($profile->avaliacoes > 1)
+                {{ round($average = $profile->estrelas / $profile->avaliacoes, 2) }}
 
-          <div class="text-center">
-            <button type="submit" class="btn btn-green-small">AVALIAR PROFISSIONAL</button>
+              @else
+                0
+              @endif
+
+            </h4>
+          </div>
+          <hr>
+
+          <div class="">
+            <meta name="token" content="{{ csrf_token() }}">
+            <!-- Avaliação -->
+            <input type="hidden" name="profissional_id" value="{{ $profile->id  }}">
+            <div class="bar-stars">
+              <span class="bg"></span>
+              <div class="stars">
+                @for($i = 0; $i < 5 ; $i ++)
+                  <span class="star">
+                <span class="absoluteStar"></span>
+            </span>
+                @endfor
+              </div>
+            </div>
+            <!-- //Avaliação-->
           </div>
 
         </div>  
@@ -77,7 +90,8 @@
           </div>
         </div>
       </div>
-      @include('layouts.includes.modal-escrever-comentario')
+    @include('layouts.includes.modal-escrever-comentario')
+
       <!-- //COMENTÁRIOS -->
       
 
@@ -141,7 +155,7 @@
               <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="col-lg-7 col-md-12 col-sm-7 col-xs-6">
                   <div class="text-center">
-                    <span class="glyphicon glyphicon glyphicon-eye-open" style="font-size: 16px;"></span> <span>0</span> <label style="font-size: 13px">Visualizações</label>
+                    <span class="glyphicon glyphicon glyphicon-eye-open" style="font-size: 16px;"></span> <span>{{$profile->visualizacoes}}</span> <label style="font-size: 13px">Visualizações</label>
                   </div>
                 </div>
 
@@ -281,5 +295,6 @@
   {{-- Escrever comentário validação e blockUI loading --}}
   <script src="{{ asset('js/validations/escrever-comentario-validation-blockUI.js') }}"></script>
   {{-- Iniiar modais com erros de formulário--}}
-  <script src="{{ asset('js/iniciar-modais.js') }}"></script>
+<script src="{{ asset('js/iniciar-modais.js') }}"></script>
+<script src="{{ asset('js/avaliacao-stars.js') }}"></script>
 @endpush

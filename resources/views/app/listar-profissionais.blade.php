@@ -106,11 +106,16 @@
                 <hr>
                 {{-- ESTRELAS --}}
                 <div class="text-center">
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 25px;"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 25px;"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 25px;"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 25px;"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 25px;"></span>
+                  <div class="bar-stars">
+                    <span class="bg" style="width: @if($profissional->avaliacoes != 0){{ round($profissional->estrelas / $profissional->avaliacoes,2) * 20  }}@else 0 @endif%"></span>
+                    <div class="stars">
+                      @for($i = 0; $i < 5 ; $i ++)
+                        <span class="star">
+                            <span class="absoluteStar"></span>
+                        </span>
+                      @endfor
+                    </div>
+                  </div>
                 </div>
                 {{-- //ESTRELAS --}}
               </div>

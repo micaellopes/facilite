@@ -11,8 +11,11 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     {{-- CSS --}}
-    {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('css/dashboard-style.css') }}" rel="stylesheet">
+     {{--<link href="{{ asset('css/style.css') }}" rel="stylesheet">--}}
+	<link href="{{ asset('css/dashboard-style.css') }}" rel="stylesheet">
+
+	<link href="{{ asset('css/owl-carousel/owl.carousel.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/owl-carousel/owl.theme.default.min.css') }}" rel="stylesheet">
 
     {{-- Fonts --}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
