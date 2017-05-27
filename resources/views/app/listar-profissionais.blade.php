@@ -107,7 +107,7 @@
                 {{-- ESTRELAS --}}
                 <div class="text-center">
                   <div class="bar-stars">
-                    <span class="bg" style="width: @if($profissional->avaliacoes != 0){{ round($profissional->estrelas / $profissional->avaliacoes,2) * 20  }}@else 0 @endif%"></span>
+                    <span class="bg" style="width: @if($profissional->avaliacoes()->count() != 0){{ round($profissional->avaliacoes()->sum('estrelas') / $profissional->avaliacoes()->count(),2) * 20  }}@else 0 @endif%"></span>
                     <div class="stars">
                       @for($i = 0; $i < 5 ; $i ++)
                         <span class="star">

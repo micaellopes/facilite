@@ -37,11 +37,20 @@ class AvaliacaoController extends Controller
     public function store(Request $request, Professional $profissional)
     {
         // Validar se os parametros passados existem
-        $profissional->estrelas = $request->stars + $profissional->estrelas;
-        $profissional->avaliacoes = $profissional->avaliacoes + 1;
-        $profissional->save();
+        if($profissional->user_id == \Auth::user()->id){
+            return response()->json(['error'=>'Voce no pode votar em si propio'], 400);
+        }
 
-        return $profissional;
+        //Se o usurio no votou nesse profissional ainda ele poder votar
+        if(!$profissional->avaliacoes()->where('user_id',\Auth::user()->id)->get()->count() > 0){
+            $profissional->avaliacoes()->create(['user_id'=> \Auth::user()->id, 'estrelas' => $request->stars]);
+            return $profissional->with('avaliacoes')->first();
+        }else{
+            return response()->json(['error'=>'Voce ja avaliou este profissional!'], 400);
+        }
+
+
+        //return $profissional->with();
     }
 
     /**

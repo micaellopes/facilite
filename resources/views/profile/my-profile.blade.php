@@ -21,62 +21,32 @@
             <div class="panel-body">
               
                 <h3><b>Avaliação:</b></h3>
-                <div class="text-center">
-                <h4 class="font-60">0.0</h4>
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-                <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="font-size: 35px;"></span>
-                <hr>
-              </div>
-              
-              <div class="text-right" style="margin-right: 17%;">
-                <span class="font-16">Serviço: 
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-                </span>
-              
+              {{-- ESTRELAS --}}
+              <h4 class="font-70 cyan-primary" id="average">
+                @if($profile->avaliacoes()->count() > 0)
+                  {{  round($profile->avaliacoes()->sum('estrelas') / $profile->avaliacoes()->count(), 2)}}
 
-                <span class="font-16">Pontualidade: 
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-                </span>
+                @else
+                  0
+                @endif
 
-                <span class="font-16">Preço: 
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-                </span> 
-
-                <span class="font-16">Quesito 4: 
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-                </span> 
-
-                <span class="font-16">Quesito 5: 
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><br/>
-                </span> 
-              </div>
-              <hr>
+              </h4>
+              <!-- Impossibilita a requisicao de votar -->
+              <span data-voted="1"></span>
+              <!-- \\Impossibilita a requisicao de votar -->
               <div class="text-center">
-                <button type="submit" class="btn btn-warning btn-lg">Avaliar</button>
+                <div class="bar-stars">
+                  <span class="bg" style="width: @if($profile->avaliacoes()->count() != 0){{ round($profile->avaliacoes()->sum('estrelas') / $profile->avaliacoes()->count(),2) * 20  }}@else 0 @endif%"></span>
+                  <div class="stars">
+                    @for($i = 0; $i < 5 ; $i ++)
+                      <span class="star">
+                            <span class="absoluteStar"></span>
+                        </span>
+                    @endfor
+                  </div>
+                </div>
               </div>
+              {{-- //ESTRELAS --}}
             </div>
             <!-- //PAINEL -->
           </div>

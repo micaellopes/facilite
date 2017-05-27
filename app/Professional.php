@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Categoria;
 use App\Models\Servico;
 use App\Models\Especialidade;
+use App\Models\Avaliacao;
 use App\User;
 
 class Professional extends Authenticatable
@@ -58,6 +59,11 @@ class Professional extends Authenticatable
     // Um profissional tem vários comentários
     public function comentarios(){
         return $this->hasMany('App\Models\Comentario');
+    }
+
+    public function avaliacoes()
+    {
+        return $this->hasMany(Avaliacao::class);
     }
 
 }

@@ -23,8 +23,6 @@ class CreateProfessionalsTable extends Migration
             $table->string('url_perfil', 30)->unique()->nullable();
             $table->string('status', 10)->default('inactive');
             $table->text('description', 400)->nullable();
-            $table->integer('avaliacoes')->default(0);
-            $table->integer('estrelas')->default(0);
             $table->integer('visualizacoes')->default(0);
             $table->timestamps();
 

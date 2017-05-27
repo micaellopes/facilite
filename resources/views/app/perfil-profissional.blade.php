@@ -22,14 +22,22 @@
             <hr>
             <div class="text-center">
             <h4 class="font-70 cyan-primary" id="average">
-              @if($profile->avaliacoes > 1)
-                {{ round($average = $profile->estrelas / $profile->avaliacoes, 2) }}
+              @if($profile->avaliacoes()->count() > 0)
+                {{  round($profile->avaliacoes()->sum('estrelas') / $profile->avaliacoes()->count(), 2)}}
 
               @else
                 0
               @endif
 
             </h4>
+                <?php
+                  $voted =  $profile->avaliacoes()->where('user_id', \Auth::user()->id)->get()->count() > 0 ? 1 : 0;
+                ?>
+                @if($voted)
+                  Voce ja avaliou este profissional!
+                  @else
+                  <span data-voted="{{$voted}}"></span>
+                  @endif
           </div>
           <hr>
 
